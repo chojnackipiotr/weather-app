@@ -6,10 +6,10 @@ import NotFound from '../not-found/not-found';
 const Routes = props => {
   return (
       <Switch>
-        <Route path={ '/' } exact={ true }>
+        <Route path={'/'} exact={true}>
           <MainPage />
         </Route>
-        <Route path={ '/city/:id' } exact={ true }>
+        <Route path={'/city/:id'} exact={true}>
           <CityData />
         </Route>
         <Route>
