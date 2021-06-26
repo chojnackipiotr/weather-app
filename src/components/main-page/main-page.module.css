@@ -16,11 +16,14 @@
 .headerMain {
     font-size: 2rem;
     padding: 4rem 0;
+    text-align: center;
 }
 
 .headerSecondary {
     font-size: 1.5rem;
     padding-bottom: 5rem;
+    text-align: center;
+
 }
 
 @media (min-width: 640px) {
