@@ -1,0 +1,80 @@
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem 1.5rem;
+}
+
+.logo {
+    align-items: center;
+    color: var(--color-primary);
+    display: flex;
+    font-size: 2rem;
+    font-weight: 900;
+    justify-content: center;
+    letter-spacing: -0.125rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.logo > svg {
+    margin-left: 0.25rem;
+}
+
+.formClass {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputClass {
+    border-bottom: 0.125rem solid black;
+    height: 4rem;
+    margin-bottom: 0.5rem;
+    outline: none;
+    font-size: 1.25rem;
+}
+
+.submitClass {
+    background-color: var(--color-secondary);
+    border-radius: 0.25rem;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    height: 4rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.submitClass:hover {
+    background-color: var(--color-secondary-lighter);
+}
+
+.submitClass:disabled {
+    background-color: var(--color-gray);
+}
+
+@media (min-width: 640px) {
+    .container {
+        flex-direction: row;
+        flex-shrink: 1;
+    }
+
+    .formClass {
+        flex-direction: row;
+        margin-left: 0.5rem;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .inputClass {
+        width: auto;
+    }
+
+    .submitClass {
+        height: 3rem;
+        font-size: 1.25rem;
+        margin-left: 0.5rem;
+    }
+}

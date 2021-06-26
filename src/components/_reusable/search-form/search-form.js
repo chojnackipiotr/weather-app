@@ -23,7 +23,7 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
       return;
     }
 
-    setDisable(false)
+    setDisable(false);
     console.log('eee')
   }
 

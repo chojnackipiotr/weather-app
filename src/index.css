@@ -1,3 +1,11 @@
+:root {
+    --color-primary: black;
+    --color-secondary: #45b3e7;
+    --color-secondary-lighter: #89cff0;
+    --color-gray: #b3c1c8;
+    --breakpoint-sm: 640;
+}
+
 /*CSS RESET*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -9,7 +17,7 @@
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Sections
@@ -165,6 +173,7 @@ textarea {
     font-size: 100%; /* 1 */
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
+    border: none;
 }
 
 /**
