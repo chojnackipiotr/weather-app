@@ -15,15 +15,55 @@
 
 .headerMain {
     font-size: 2rem;
-    padding: 4rem 0;
+    margin: 4rem 0;
     text-align: center;
 }
 
 .headerSecondary {
     font-size: 1.5rem;
-    padding-bottom: 5rem;
+    margin-bottom: 5rem;
     text-align: center;
+}
 
+.formMain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputMain {
+    height: 4rem;
+    background-color: transparent;
+    border-bottom: 0.25rem solid white;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.inputMain::placeholder {
+    color: white;
+}
+
+.mainSubmit {
+    margin-top: 2rem;
+    height: 3rem;
+    border: 0.25rem solid white;
+    background-color: transparent;
+    font-size: 1.75rem;
+    color: white;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.mainSubmit:hover {
+    color: var(--color-secondary);
+    background-color: white;
+}
+
+.mainSubmit:disabled {
+    background-color: var(--color-gray);
 }
 
 @media (min-width: 640px) {
@@ -33,5 +73,10 @@
 
     .headerSecondary {
         font-size: 2rem;
+    }
+
+    .formMain {
+        min-width: 500px;
+        width: 60%;
     }
 }

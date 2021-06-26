@@ -13,7 +13,11 @@ const MainPage = props => {
       <h3 className={styles.headerSecondary}>
         Type city name below and check actual weather!
       </h3>
-      <SearchForm/>
+      <SearchForm
+        formClassName={styles.formMain}
+        inputClassName={styles.inputMain}
+        submitClassName={styles.mainSubmit}
+      />
     </div>
   );
 };
