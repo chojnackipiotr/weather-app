@@ -5,6 +5,7 @@ import inputValidator from '../../../helpers/input-validator';
 const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
+  const [disable, setDisable] = useState(false);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -12,14 +13,17 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setDisable(true);
     error && setError('');
 
     const errorMessage = inputValidator(value);
     if (errorMessage) {
       setError(errorMessage);
+      setDisable(false);
       return;
     }
 
+    setDisable(false)
     console.log('eee')
   }
 
@@ -37,6 +41,8 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
         value={value}
       />
       <input
+        className={submitClassName}
+        disabled={disable}
         type='submit'
         value='Check weather'
       />

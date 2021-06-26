@@ -1,13 +1,15 @@
+import styles from './header.module.css';
 import AppLogo from '../../_reusable/app-logo/app-logo';
 import SearchForm from '../../_reusable/search-form/search-form';
 
 const Header = () => {
   return (
-    <div className='w-screen p-8 flex justify-between items-center'>
-      <AppLogo className='text-5xl' />
+    <div className={styles.container}>
+      <AppLogo className={styles.logo} />
       <SearchForm
-        formClassName={'h-12 flex'}
-        inputClassName={'w-96 border-b-2 border-black-600'}
+        formClassName={styles.formClass}
+        inputClassName={styles.inputClass}
+        submitClassName={styles.submitClass}
       />
     </div>
   );
