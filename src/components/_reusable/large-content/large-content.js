@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './large-content.module.css';
-import background from '../../../static/images/main-background.jpg';
 import SearchForm from '../search-form/search-form';
 
 const LargeContent = ({h1Text, h2Text, h3Text}) => {
   return (
     <div
       className={styles.container}
-      style={{backgroundImage: `url(${background})`}}
+      style={{backgroundImage:'url("/img/main-background.jpg")'}}
     >
       <h1 className={styles.headerMain}>
         {h1Text}

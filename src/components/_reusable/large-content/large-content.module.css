@@ -1,6 +1,4 @@
 .container {
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../../static/images/main-background.jpg', sizingMethod='scale')";
-
     align-items: center;
     background-size: cover;
     background: var(--color-secondary) no-repeat fixed center;
