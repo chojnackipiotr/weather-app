@@ -10,7 +10,8 @@ const DefaultCitiesList = ( {currentCityData, defaultCitiesData, userCityLocatio
       </div>
       <ul>
         {
-          currentCityData?.main &&
+          currentCityData?.main
+          ?
           defaultCitiesData.map(city => {
             return (
               <DefaultCitiesListItem
@@ -21,6 +22,8 @@ const DefaultCitiesList = ( {currentCityData, defaultCitiesData, userCityLocatio
               />
             );
           })
+          :
+          'Loading data...'
         }
       </ul>
     </div>

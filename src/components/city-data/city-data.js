@@ -2,7 +2,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {useLocation, useHistory} from 'react-router-dom';
 import {getCurrentCityData, getDefaultCitiesData} from '../../store/weatherReducer';
 import {useEffect} from 'react';
-import {fetchSingleCityData} from '../../actions/weatherActions';
+import {fetchDefaultCitiesData, fetchSingleCityData} from '../../actions/weatherActions';
 import styles from './city-data.module.css';
 import CurrentCity from './current-city/current-city';
 import DefaultCitiesList from './default-cities-list/default-cities-list';
@@ -23,8 +23,12 @@ const CityData = () => {
           push('/location-not-found')
         })
     }
+
+    if(!defaultCities.length === 0) {
+      dispatch(fetchDefaultCitiesData())
+    }
     // eslint-disable-next-line
-  }, [currentCity])
+  }, [currentCity, defaultCities])
 
   return (
     <div className={styles.container}>
