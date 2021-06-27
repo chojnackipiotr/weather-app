@@ -33,6 +33,7 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
     dispatch(fetchSingleCityData(encodeURI(value)))
       .then(() => {
         setDisable(false);
+        setValue('');
         push(`/city/${value.toLowerCase()}`)
       })
       .catch(err => {
