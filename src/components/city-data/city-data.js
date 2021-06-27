@@ -23,6 +23,7 @@ const CityData = () => {
           push('/location-not-found')
         })
     }
+    // eslint-disable-next-line
   }, [currentCity])
 
   return (

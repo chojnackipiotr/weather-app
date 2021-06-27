@@ -4,7 +4,6 @@ const initialState = {
   defaultCitiesData: [],
   currentCityData: {},
   isLoading: false,
-  appError: false,
 }
 
 export function weatherReducer(state = initialState, action) {
