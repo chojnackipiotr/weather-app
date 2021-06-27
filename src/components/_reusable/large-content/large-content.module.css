@@ -1,10 +1,9 @@
 .container {
-    background-image: url("../../../static/images/main-background.jpg");
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../../static/images/main-background.jpg', sizingMethod='scale')";
 
     align-items: center;
     background-size: cover;
-    background: var(--color-secondary) url("../../../static/images/main-background.jpg") no-repeat fixed center;
+    background: var(--color-secondary) no-repeat fixed center;
     border-radius: 0.5rem;
     box-shadow: inset 0 0 0 2000px rgba(69, 179, 231, 0.6);
     color: white;

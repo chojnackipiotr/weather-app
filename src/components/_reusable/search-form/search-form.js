@@ -65,7 +65,7 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
         className={submitClassName}
         disabled={disable}
         type='submit'
-        value='Check weather'
+        value={disable ? 'Fetching data...' : 'Check weather'}
       />
     </form>
   );

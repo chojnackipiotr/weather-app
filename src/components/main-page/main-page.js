@@ -1,29 +1,13 @@
-import styles from './main-page.module.css';
-import SearchForm from '../_reusable/search-form/search-form';
+import LargeContent from '../_reusable/large-content/large-content';
 
-const MainPage = props => {
+const MainPage = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.headerMain}>
-        Welcome to Weatherly.APP!
-      </h1>
-      <h2 className={styles.headerSecondary}>
-        Check the weather in cities around the globe <span role='img' aria-label='emoji-earth'>🌍</span>
-      </h2>
-      <h3 className={styles.headerSecondary}>
-        Type city name below and check actual weather!
-      </h3>
-      <SearchForm
-        formClassName={styles.formMain}
-        inputClassName={styles.inputMain}
-        submitClassName={styles.mainSubmit}
-      />
-    </div>
+    <LargeContent
+      h1Text={'Welcome to Weatherly.APP!'}
+      h2Text={'Check the weather in cities around the globe!'}
+      h3Text={'Type city name below and check actual weather!'}
+    />
   );
-};
-
-MainPage.propTypes = {
-
 };
 
 export default MainPage;
