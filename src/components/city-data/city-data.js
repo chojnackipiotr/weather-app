@@ -1,14 +1,41 @@
+import {useSelector, useDispatch} from 'react-redux';
+import {useLocation, useHistory} from 'react-router-dom';
+import {getCurrentCityData, getDefaultCitiesData} from '../../store/weatherReducer';
+import {useEffect} from 'react';
+import {fetchSingleCityData} from '../../actions/weatherActions';
+import styles from './city-data.module.css';
+import CurrentCity from './current-city/current-city';
+import DefaultCitiesList from './default-cities-list/default-cities-list';
 
-const CityData = props => {
+const CityData = () => {
+  const currentCity = useSelector(getCurrentCityData);
+  const defaultCities = useSelector(getDefaultCitiesData);
+  const location = useLocation();
+  const {push} = useHistory();
+  const dispatch = useDispatch();
+  const userCityLocation = location.pathname.replace('/city/', '');
+
+  useEffect(() => {
+    if (!currentCity?.main) {
+      dispatch(fetchSingleCityData(encodeURI(userCityLocation)))
+        .then(() => {})
+        .catch(() => {
+          push('/location-not-found')
+        })
+    }
+  }, [currentCity])
+
   return (
-    <div>
-      City data
+    <div className={styles.container}>
+      <CurrentCity
+        data={currentCity}
+        userCityLocation={userCityLocation}
+      />
+      <DefaultCitiesList
+        data={defaultCities}
+      />
     </div>
   );
-};
-
-CityData.propTypes = {
-
 };
 
 export default CityData;

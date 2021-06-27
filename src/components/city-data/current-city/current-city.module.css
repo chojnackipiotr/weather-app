@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    border: 0.125rem solid var(--color-primary);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.icon {
+    margin: 1rem;
+    font-size: 6rem;
+}
+
+.info {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.condition {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
