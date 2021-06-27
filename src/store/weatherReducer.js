@@ -3,7 +3,6 @@ import * as weather from '../actionTypes/weatherActionTypes'
 const initialState = {
   defaultCitiesData: [],
   currentCityData: {},
-  isLoading: false,
 }
 
 export function weatherReducer(state = initialState, action) {
