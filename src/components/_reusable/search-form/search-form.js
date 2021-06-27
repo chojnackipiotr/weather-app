@@ -37,7 +37,7 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
       })
       .catch(err => {
         setDisable(false)
-        setError(err.message)
+        push('/location-not-found')
       })
   }
 
