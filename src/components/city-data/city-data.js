@@ -32,7 +32,9 @@ const CityData = () => {
         userCityLocation={userCityLocation}
       />
       <DefaultCitiesList
-        data={defaultCities}
+        currentCityData={currentCity}
+        defaultCitiesData={defaultCities}
+        userCityLocation={userCityLocation}
       />
     </div>
   );

@@ -3,9 +3,9 @@ import * as weather from '../actionTypes/weatherActionTypes';
 
 export const fetchDefaultCitiesData = () => {
   return dispatch => {
-    const tokyo = fetchCityData('Tokyo');
-    const cracow = fetchCityData('Krakow');
-    const losAngeles = fetchCityData('Los%20Angeles');
+    const tokyo = fetchCityData('Szczecin');
+    const cracow = fetchCityData('Kraków');
+    const losAngeles = fetchCityData('Rzeszów');
 
     Promise.all([tokyo, cracow, losAngeles])
       .then(res => {
