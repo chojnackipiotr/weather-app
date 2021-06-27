@@ -24,7 +24,7 @@ const CityData = () => {
         })
     }
 
-    if(!defaultCities.length === 0) {
+    if(defaultCities.length === 0) {
       dispatch(fetchDefaultCitiesData())
     }
     // eslint-disable-next-line
