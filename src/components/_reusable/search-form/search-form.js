@@ -1,13 +1,20 @@
 import {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
+import styles from './search-form.module.css';
 import PropTypes from 'prop-types';
 import inputValidator from '../../../helpers/input-validator';
+import {fetchSingleCityData} from '../../../actions/weatherActions';
 
 const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const [disable, setDisable] = useState(false);
+  const dispatch = useDispatch();
+  const {push} = useHistory()
 
   const handleChange = (e) => {
+    error && setError('')
     setValue(e.target.value);
   }
 
@@ -23,8 +30,15 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
       return;
     }
 
-    setDisable(false);
-    console.log('eee')
+    dispatch(fetchSingleCityData(encodeURI(value)))
+      .then(() => {
+        setDisable(false);
+        push(`/city/${value.toLowerCase()}`)
+      })
+      .catch(err => {
+        setDisable(false)
+        setError(err.message)
+      })
   }
 
   return (
@@ -32,6 +46,12 @@ const SearchForm = ({formClassName, inputClassName, submitClassName}) => {
       onSubmit={onSubmit}
       className={formClassName}
     >
+      {
+        error &&
+          <div className={styles.error}>
+            {error.toUpperCase()}
+          </div>
+      }
       <input
         aria-label='city-search'
         className={inputClassName}

@@ -22,3 +22,25 @@ export const fetchDefaultCitiesData = () => {
       });
   };
 };
+
+export const fetchSingleCityData = cityName => {
+  return dispatch => {
+    return new Promise((resolve, reject) => {
+      fetchCityData(cityName)
+        .then(res => {
+
+          if (res?.main) {
+            dispatch({
+              type: weather.SET_CURRENT_CITY_DATA,
+              payload: res,
+            })
+
+            resolve('success')
+          } else {
+            reject(res);
+          }
+        })
+        .catch(err => reject(err))
+    })
+  }
+}
